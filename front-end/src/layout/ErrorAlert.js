@@ -1,3 +1,4 @@
+
 import React from "react";
 
 /**
@@ -11,7 +12,9 @@ import React from "react";
 function ErrorAlert({ error }) {
   return (
     error && (
-      <div className="alert alert-danger m-2">Error: {error.message}</div>
+      <div className="alert border border-danger alert-danger my-2">
+        Error: {error.message}
+      </div>
     )
   );
 }

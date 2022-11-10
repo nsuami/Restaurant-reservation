@@ -25,35 +25,28 @@ function Menu() {
           <li className="nav-item">
             <Link className="nav-link" to="/dashboard">
               <span className="oi oi-dashboard" />
-              &nbsp;Dashboard
+              <span className="navText">&nbsp;&nbsp;Dashboard </span>
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/search">
               <span className="oi oi-magnifying-glass" />
-              &nbsp;Search
+              <span className="navText">&nbsp;&nbsp;Search </span>
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/reservations/new">
               <span className="oi oi-plus" />
-              &nbsp;New Reservation
+              <span className="navText">&nbsp;&nbsp;New Reservation </span>
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/tables/new">
               <span className="oi oi-layers" />
-              &nbsp;New Table
+              <span className="navText">&nbsp;&nbsp;New Table </span>
             </Link>
           </li>
         </ul>
-        <div className="text-center d-none d-md-inline">
-          <button
-            className="btn rounded-circle border-0"
-            id="sidebarToggle"
-            type="button"
-          />
-        </div>
       </div>
     </nav>
   );
