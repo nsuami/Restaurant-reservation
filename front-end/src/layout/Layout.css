@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
 
-
+.img-fluid {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
 
 h1 {
   font-family: 'Bad Script', cursive;
