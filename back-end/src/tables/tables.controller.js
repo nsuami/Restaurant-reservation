@@ -166,17 +166,34 @@ function reservationIsBooked(req, res, next) {
 }
 
 //checks if the tables capacity is enough for the reservaion's people
-function hasCapacity(req, res, next) {
-  const { capacity } = res.locals.table;
-  const { people } = res.locals.reservation;
+async function hasCapacity(req, res , next){
 
-  if (capacity >= people) {
-    return next();
+  const {tableId} = req.params;
+
+  const { data : {reservation_id} = {} } = req.body;
+
+  if(reservation_id){
+
+    let reservation = await reservationService.read(reservation_id);
+
+    const {people} = reservation;
+
+    const capacity = req.table;
+
+    if(people> capacity){
+
+      next({
+      status:400,
+      message:`Table with id ${tableId} doesnt have enough capacity`
+
+       })  }
+    else{
+      next()
+    }
   }
-  next({
-    status: 400,
-    message: `This Reservation requires a capacity of at least ${people}.`,
-  });
+  else{
+    next()
+  }
 }
 
 function tableIsFree(req, res, next) {

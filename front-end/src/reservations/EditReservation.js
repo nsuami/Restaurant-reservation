@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import {
-  createReservation,
   readReservation,
   updateReservation,
 } from "../utils/api";
@@ -15,7 +14,7 @@ import { useParams } from "react-router-dom";
  *
  * @returns {JSX.Element}
  */
-export default function ReservationForm({ editMode }) {
+export default function ReservationForm() {
   const history = useHistory();
 
   const reservation_id = useParams().reservation_id;
@@ -29,16 +28,14 @@ export default function ReservationForm({ editMode }) {
     people: "",
   };
 
-  const headlineText = editMode ? "Edit Reservation" : "New Reservation";
+  const headlineText = "New Reservation";
 
   const [resState, setResState] = useState(reservationInit);
 
   const [reservationError, setReservationError] = useState(null);
 
   useEffect(() => {
-    if (editMode) {
       loadReservation();
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -53,7 +50,7 @@ export default function ReservationForm({ editMode }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (editMode) {
+    // if (editMode) {
       const updatedReservation = {
         ...resState,
         people: Number(resState.people),
@@ -71,21 +68,21 @@ export default function ReservationForm({ editMode }) {
         })
         .catch(setReservationError);
       return () => abortController.abort();
-    } else {
-      const newReservation = {
-        ...resState,
-        people: Number(resState.people),
-        status: "booked",
-      };
-      const abortController = new AbortController();
-      setReservationError(null);
-      createReservation(newReservation, abortController.signal)
-        .then(() => {
-          history.push(`/dashboard?date=${resState.reservation_date}`);
-        })
-        .catch(setReservationError);
-      return () => abortController.abort();
-    }
+    // } else {
+    //   const newReservation = {
+    //     ...resState,
+    //     people: Number(resState.people),
+    //     status: "booked",
+    //   };
+    //   const abortController = new AbortController();
+    //   setReservationError(null);
+    //   createReservation(newReservation, abortController.signal)
+    //     .then(() => {
+    //       history.push(`/dashboard?date=${resState.reservation_date}`);
+    //     })
+    //     .catch(setReservationError);
+    //   return () => abortController.abort();
+    // }
   };
 
   //only allows digits in xxx-xxx-xxxx pattern (typed or pasted)
