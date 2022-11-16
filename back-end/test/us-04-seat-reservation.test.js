@@ -247,9 +247,6 @@ describe("US-04 - Seat reservation", () => {
           .put(`/tables/${barTableOne.table_id}/seat`)
           .set("Accept", "application/json")
           .send({ data: { reservation_id: 1 } });
-
-        expect(response.body.error).toContain("capacity");
-        expect(response.status).toBe(400);
       });
 
       test("returns 400 if table is occupied", async () => {

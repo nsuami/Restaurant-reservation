@@ -128,7 +128,7 @@ function Dashboard({ date }) {
         <input
           type="date"
           className="form-control"
-          style={{ maxWidth: "150px" }}
+          style={{ maxWidth: "120px" }}
           onChange={(event) =>
             history.push(`/dashboard?date=${event.target.value}`)
           }

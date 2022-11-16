@@ -50,7 +50,7 @@ export default function ReservationCard({ reservation, loadReservations }) {
       setButtons(
         <div className="btn-group my-2">
           <Link
-            className="btn btn-sm btn-primary"
+            className="btn btn-sm btn-primary mx-2"
             to={`/reservations/${reservation_id}/seat`}
           >
             <span className="oi oi-people mr-2" />
@@ -58,7 +58,7 @@ export default function ReservationCard({ reservation, loadReservations }) {
           </Link>
           <Link
             to={`/reservations/${reservation_id}/edit`}
-            className="btn btn-sm btn-secondary"
+            className="btn btn-sm btn-secondary mx-2"
           >
             <span className="oi oi-pencil mr-2" />
             Edit
@@ -66,7 +66,7 @@ export default function ReservationCard({ reservation, loadReservations }) {
           <button
             data-reservation-id-cancel={reservation_id}
             to={`/reservations/${reservation_id}/edit`}
-            className="btn btn-sm btn-danger"
+            className="btn btn-sm btn-danger mx-2"
             onClick={handleCancel}
           >
             <span className="oi oi-trash mr-2" />

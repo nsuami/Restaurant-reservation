@@ -5,6 +5,9 @@
   object-fit: cover;
   width: 100%;
 }
+body {
+  background-image: url("https://images.pexels.com/photos/7794361/pexels-photo-7794361.jpeg?cs=srgb&dl=pexels-monstera-7794361.jpg&fm=jpg&_gl=1*rdepc6*_ga*MTI3NDg1Nzk3Mi4xNjY4NTQ1NTAx*_ga_8JE65Q40S6*MTY2ODU3MDkwOS4yLjEuMTY2ODU3MTc1Mi4wLjAuMA..");
+}
 
 h1 {
   font-family: 'Bad Script', cursive;

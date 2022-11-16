@@ -23,7 +23,7 @@ export default function NewReservationForm({ editMode }) {
       people: "",
     };
   
-    const headlineText = "Edit Reservation";
+    const headlineText = "New Reservation";
   
     const [resState, setResState] = useState(reservationInit);
   
@@ -106,7 +106,7 @@ export default function NewReservationForm({ editMode }) {
               </label>
               <input
                 className="form-control"
-                placeholder="First"
+                placeholder="First Name"
                 aria-label="First name"
                 id="first_name"
                 type="text"
@@ -126,7 +126,7 @@ export default function NewReservationForm({ editMode }) {
               </label>
               <input
                 className="form-control"
-                placeholder="Last"
+                placeholder="Last Name"
                 aria-label="Last name"
                 id="last_name"
                 type="text"

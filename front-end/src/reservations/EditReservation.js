@@ -28,7 +28,7 @@ export default function ReservationForm() {
     people: "",
   };
 
-  const headlineText = "New Reservation";
+  const headlineText = "Edit Reservation";
 
   const [resState, setResState] = useState(reservationInit);
 
